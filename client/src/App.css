@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  text-align: center;
+}
+
+.all-celeb-boxes {
+  display: flex;
+}
+
+.celeb-info-display {
+  width: 315px;
+}
+.display-image {
+  width: 90%;
+  height: auto;
+}
