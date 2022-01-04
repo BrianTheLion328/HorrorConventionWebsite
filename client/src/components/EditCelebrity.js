@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import { navigate } from '@reach/router';
 import axios from 'axios';
-import '../App.css';
+import React, { useState, useEffect } from 'react'
 
-export default function CelebrityForm(props) {
-    const {addCelebrity} = props;
+export default function EditCelebrity(props) {
+    const {id} = props;
     const [celebName, setCelebName] = useState('');
     const [movie, setMovie] = useState('');
     const [character, setCharacter] = useState('');
@@ -11,42 +11,41 @@ export default function CelebrityForm(props) {
     const [photoOpTime, setPhotoOpTime] = useState('')
     const [errors, setErrors] = useState([])
 
-    const createCelebrity = (e) => {
+    useEffect(() => {
+        axios.get(`http://localhost:8000/api/celebrities/${id}`)
+            .then(res => {
+                setCelebName(res.data.celebName)
+                setMovie(res.data.celebMovie)
+                setCharacter(res.data.celebCharacter)
+                setPhotoUrl(res.data.celebPhotoUrl)
+                setPhotoOpTime(res.data.celebPhotoOp)
+            })
+            .catch(err => console.log(err.response) )
+    }, [id])
+
+    const updateCelebrity = e => {
         e.preventDefault()
 
-        const newCelebrity = {
+        axios.put(`http://localhost:8000/api/celebrities/${id}`, {
             celebName: celebName,
             celebMovie: movie,
             celebCharacter: character,
             celebPhotoUrl: photoUrl,
             celebPhotoOp: photoOpTime,
-        }
-        console.log("New Celebrity: ", newCelebrity)
-
-        console.log(addCelebrity);
-
-        axios.post("http://localhost:8000/api/celebrities", newCelebrity)
-            .then(res => {
-                console.log("AXIOS POST NEW CELEBRITY: ", res.data)
-                setCelebName('')
-                setMovie('')
-                setCharacter('')
-                setPhotoUrl('')
-                setPhotoOpTime('')
-                addCelebrity(res.data)
-            })
-            .catch((err) => {
-                console.log("ERROR FOR ADDING NEW CELEBRITY: ", err.response.data.errors)
-                if (err.response.data.errors) {
-                    setErrors(err.response.data.errors)
-                }
-            })
+        })
+        .then(res => {
+            navigate(`/convention/${id}`)
+        })
+        .catch(err => {
+            console.log("UPDATE CELEBRITY CONSOLE LOG: ", err.response.data.errors)
+            setErrors(err.response.data.errors)
+        })
     }
 
     return (
         <div>
-            <h3>Add a new celebrity to this convention</h3>
-            <form className="celebrity-form" onSubmit={createCelebrity}>
+            <h3>Edit this celebrity</h3>
+            <form className="celebrity-update-form" onSubmit={updateCelebrity}>
                 <div>
                     {
                         errors.celebName && <p style={{color: "red"}}>{errors.celebName.message}</p>
@@ -88,8 +87,12 @@ export default function CelebrityForm(props) {
                     value={photoOpTime}
                     onChange={(e) => { setPhotoOpTime(e.target.value) } } />
                 </div>
-                <input type="submit" value="Add Celebrity" className="add-celebrity-button" />
+                <input type="submit" value="Edit Celebrity" className="add-celebrity-button" />
+                <button onClick={() => navigate(`/convention/${id}`)}>Cancel</button>
             </form>
+            <div>
+                <img src={photoUrl} alt="character"></img>
+            </div>
         </div>
     )
 }
