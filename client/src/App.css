@@ -12,7 +12,7 @@ h1 {
   font-family: 'Playfair Display', serif;
 }
 body{
-  background-image: linear-gradient(to right, rgb(26, 56, 194), rgb(139, 187, 233), rgb(32, 90, 218));
+  background-image: linear-gradient(to right, rgb(194, 116, 26), rgb(233, 200, 139), rgb(218, 137, 32));
 }
 /* Details of individual convention with list of celebs */
 
@@ -26,8 +26,8 @@ body{
   font-size: 22px;
 }
 .solo-convention-title{
-  margin-top: 25px;
-  font-size: 30px;
+  margin-top: -10px;
+  font-size: 50px;
 }
 
 .all-conventions-header {
@@ -52,7 +52,7 @@ body{
   color: rgb(255, 255, 255);
   margin-bottom: 10px;
   width: 210px;
-  text-shadow: 0px 0px 9px rgb(255, 255, 255);
+  text-shadow: 0px 0px 9px rgb(1, 255, 35);
 }
 
 .all-celeb-boxes {
@@ -106,20 +106,20 @@ td.celeb-list-name {
   font-family: Georgia, "Times New Roman";
 }
 .cell {
-  background-color: rgb(226, 226, 255);
+  background-color: skyblue;;
 }
 .cell-name{
-  background-color: rgb(253, 223, 159);
+  background-color: rgb(159, 253, 209);
 }
 .cell-details {
   font-size: 18px;
-  background-color: rgb(199, 251, 255);
+  background-color: rgb(255, 255, 255);
 }
 .cell-delete {
   background-color: pink;
 }
 .convention-list-background {
-  background-image: linear-gradient(to right, rgb(26, 56, 194), rgb(139, 187, 233), rgb(32, 90, 218));
+  background-image: linear-gradient(to right, rgb(194, 116, 26), rgb(233, 200, 139), rgb(218, 137, 32));
 }
 .convention-list {
   margin-left: 20px;
@@ -133,7 +133,7 @@ td.celeb-list-name {
   width: 25%;
   margin: auto;
   margin-top: 20px;
-  margin-bottom: 35px;
+  margin-bottom: 25px;
   padding: 14px;
   background-image: linear-gradient(to bottom right, rgb(10, 192, 192), rgb(91, 241, 111), rgb(36, 67, 206))
 }
