@@ -37,36 +37,37 @@ export default function ConventionForm(props) {
     }
 
     return (
-        <div>
+        <div className="convention-form-container">
             <div>
-                <span className="your-conventions-link"><Link to={'/all-conventions'}>Your Conventions</Link></span>
+                <span className="your-conventions-link"><Link className="header-link-convention" to={'/all-conventions'}>Click here to go directly to your conventions</Link></span>
             </div>
             <form className="conventionForm" onSubmit={createConvention}>
-                <div>
+            <h2>Create a new convention:</h2>
+                <div className="convention-form-div">
+                    <label>Convention: </label>
                     {
                         errors.conventionName && <p style={{color: "red"}}> {errors.conventionName.message} </p>
                     }
-                    <label>Convention: </label>
                     <input type="text"
                     name="convention-name"
                     value={conName}
                     onChange={ (e) => { setConName(e.target.value) } } />
                 </div>
-                <div>
+                <div className="convention-form-div">
+                    <label>City: </label>
                     {
                         errors.conventionCity && <p style={{color: "red"}}> {errors.conventionCity.message} </p>
                     }
-                    <label>City: </label>
                     <input type="text"
                     name="convention-city"
                     value={conCity}
                     onChange={ (e) => { setConCity(e.target.value) } } />
                 </div>
-                <div>
+                <div className="convention-form-div">
+                    <label>State: </label>
                     {
                         errors.conventionState && <p style={{color: "red"}}> {errors.conventionState.message} </p>
                     }
-                    <label>State: </label>
                     <select onChange={(e) => { setConState(e.target.value)}} value={conState} id="city-list-menu" name="city-list-menu">
                         <option value="blank">select a state</option>
                         <option value="Alabama">Alabama</option>
@@ -121,11 +122,11 @@ export default function ConventionForm(props) {
                         <option value="Wyoming">Wyoming</option>
                     </select>
                 </div>
-                <div>
+                <div className="convention-form-div">
+                    <label>Date: </label>
                     {
                         errors.conventionDate && <p style={{color: "red"}}> {errors.conventionDate.message} </p>
                     }
-                    <label>Date: </label>
                     <input type="text"
                     name="convention-date"
                     value={conDate}

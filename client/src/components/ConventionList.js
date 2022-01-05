@@ -20,10 +20,10 @@ export default function ConventionList() {
     }
 
     return (
-        <div>
+        <div className="convention-list">
             <div className="all-conventions-header">
-                <span className="your-conventions-header">Your Conventions</span>
-                <span><Link to={'/convention-creator'}>Add a new convention</Link></span>
+                <span>Your Current Conventions:</span>
+                <span><Link className="header-link" to={'/convention-creator'}>Add a new convention</Link></span>
             </div>
             <div>
                 <table className="conventions-table">
@@ -39,12 +39,12 @@ export default function ConventionList() {
                             conventions && conventions.map((convention, index) => {
                                 return (
                                     <tr key={index} className="convention-row">
-                                        <td className="cell-name">{convention.conventionName}</td>
-                                        <td className="cell-city">{convention.conventionCity}</td>
-                                        <td className="cell-state">{convention.conventionState}</td>
-                                        <td className="cell-date">{convention.conventionDate.split("T")[0]}</td>
-                                        <td><Link to={`/convention/${convention._id}`}>Details</Link> </td>
-                                        <td><Delete someId={convention._id} successCallback={() => removeFromDom(convention._id)}/></td>
+                                        <td className="cell cell-name">{convention.conventionName}</td>
+                                        <td className="cell cell-city">{convention.conventionCity}</td>
+                                        <td className="cell cell-state">{convention.conventionState}</td>
+                                        <td className="cell cell-date">{convention.conventionDate.split("T")[0]}</td>
+                                        <td className="cell cell-details"><Link to={`/convention/${convention._id}`}>Details</Link> </td>
+                                        <td className="cell cell-delete"><Delete someId={convention._id} successCallback={() => removeFromDom(convention._id)}/></td>
                                     </tr>
                                 )
                             })

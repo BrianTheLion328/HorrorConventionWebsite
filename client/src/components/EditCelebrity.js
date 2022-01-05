@@ -44,9 +44,9 @@ export default function EditCelebrity(props) {
 
     return (
         <div>
-            <h3>Edit this celebrity</h3>
+            <h3 className="edit-this-celebrity">Edit this celebrity: </h3>
             <form className="celebrity-update-form" onSubmit={updateCelebrity}>
-                <div>
+                <div className="edit-div">
                     {
                         errors.celebName && <p style={{color: "red"}}>{errors.celebName.message}</p>
                     }
@@ -56,7 +56,7 @@ export default function EditCelebrity(props) {
                     value={celebName}
                     onChange={(e) => { setCelebName(e.target.value) } } />
                 </div>
-                <div>
+                <div className="edit-div">
                     {
                         errors.celebMovie && <p style={{color: "red"}}>{errors.celebMovie.message}</p>
                     }
@@ -66,32 +66,33 @@ export default function EditCelebrity(props) {
                     value={movie}
                     onChange={(e) => { setMovie(e.target.value) } } />
                 </div>
-                <div>
+                <div className="edit-div">
                     <label>Character they play: </label>
                     <input type="text"
                     name="character-name"
                     value={character}
                     onChange={(e) => { setCharacter(e.target.value) } } />
                 </div>
-                <div>
+                <div className="edit-div">
                     <label>Photo Url: </label>
                     <input type="text"
                     name="celebrity-photo-url"
                     value={photoUrl}
                     onChange={(e) => { setPhotoUrl(e.target.value) } } />
                 </div>
-                <div>
+                <div className="edit-div">
                     <label>Photo Op Time: </label>
                     <input type="text"
                     name="photo-op-time"
                     value={photoOpTime}
                     onChange={(e) => { setPhotoOpTime(e.target.value) } } />
                 </div>
-                <input type="submit" value="Edit Celebrity" className="add-celebrity-button" />
-                <button onClick={() => navigate(`/convention/${id}`)}>Cancel</button>
+                <input type="submit" value="Edit Celebrity" className="edit-celebrity-button" />
+                <button className="cancel-edit-button" onClick={() => navigate(`/convention/${id}`)}>Cancel</button>
             </form>
             <div>
-                <img src={photoUrl} alt="character"></img>
+                <br />
+                <img className="display-image-2" src={photoUrl} alt="character"></img>
             </div>
         </div>
     )

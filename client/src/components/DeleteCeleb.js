@@ -14,7 +14,7 @@ const DeleteCeleb = (props) => {
 
     }
     return (
-        <button style={{backgroundColor: "red", color: "white", fontSize: "16px"}} className="delete-btn" onClick={deleteThis}>
+        <button style={{backgroundColor: "crimson", color: "white", fontSize: "16px", padding: "10px"}} className="delete-btn" onClick={deleteThis}>
             Delete
         </button>
     )

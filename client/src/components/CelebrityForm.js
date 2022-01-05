@@ -45,7 +45,7 @@ export default function CelebrityForm(props) {
 
     return (
         <div>
-            <h3>Add a new celebrity to this convention</h3>
+            <p className="add-new-celeb-title">Add a new celebrity to this convention</p>
             <form className="celebrity-form" onSubmit={createCelebrity}>
                 <div>
                     {
@@ -68,14 +68,14 @@ export default function CelebrityForm(props) {
                     onChange={(e) => { setMovie(e.target.value) } } />
                 </div>
                 <div>
-                    <label>Character they play: </label>
+                    <label>Role they play: </label>
                     <input type="text"
                     name="character-name"
                     value={character}
                     onChange={(e) => { setCharacter(e.target.value) } } />
                 </div>
                 <div>
-                    <label>Photo Url: </label>
+                    <label>Photo Url: (image address url) </label>
                     <input type="text"
                     name="celebrity-photo-url"
                     value={photoUrl}

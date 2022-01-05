@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
-import {Link} from '@reach/router';
+import {Link, navigate} from '@reach/router';
 import CelebrityForm from './CelebrityForm';
-import DeleteCeleb from './DeleteCeleb'
-import '../App.css'
+import DeleteCeleb from './DeleteCeleb';
+import '../App.css';
 
 export default function Details(props) {
     const {id} = props
@@ -42,34 +42,35 @@ export default function Details(props) {
     }
 
     return (
-        <div>
+        <div className="convention-list-background">
             <div className="all-conventions-header">
-                <span><Link to={'/all-conventions'}>Back to your conventions</Link></span>
-                <span><Link to={'/convention-creator'}>Add a new convention</Link></span>
+                <span><Link className="header-link" to={'/all-conventions'}>Back to your conventions</Link></span>
+                <span><Link className="header-link" to={'/convention-creator'}>Add a new convention</Link></span>
             </div>
-            <h2>{convention.conventionName}</h2>
+            <h2 className="solo-convention-title">{convention.conventionName}</h2>
             <CelebrityForm addCelebrity={addCelebrity} />
-            <h2>Celebrity Checklist:</h2>
+            <h2 className="celeb-checklist-title">Celebrity Checklist:</h2>
             <div className="all-celeb-boxes">
-                <table>
+                <table className="celebrity-table">
                     <tbody>
-                        <tr>
+                        <tr className="celeb-table-headings">
                             <th>Celebrity Name</th>
                             <th>Movie origin</th>
                             <th>Role</th>
                             <th>Photo Op Schedule</th>
                             <th>Image</th>
+                            <th colSpan="3">Actions</th>
                         </tr>
                         {
                     celebrities.map((celebrity, index) => {
                         return (
-                            <tr style={{border: "1px solid black"}} key={index} className="celeb-info-display">
-                                <td>{celebrity.celebName}</td>
+                            <tr key={index} className="celeb-info-display">
+                                <td className="celeb-list-name">{celebrity.celebName}</td>
                                 <td>{celebrity.celebMovie}</td>
                                 <td>{celebrity.celebCharacter}</td>
                                 <td>{celebrity.celebPhotoOp}</td>
                                 <td colSpan="2"><img className="display-image" src={celebrity.celebPhotoUrl} alt="celeb" /></td>
-                                <td><Link to={`/celebrities/${celebrity._id}/edit`} className="edit-celeb-button">Edit Celebrity Info</Link></td>
+                                <td><button className="edit-celeb-button" onClick={() => navigate(`/celebrities/${celebrity._id}/edit`)}>Edit Celebrity</button></td>
                                 <td><DeleteCeleb someId={celebrity._id} successCallback={() => removeFromDom(celebrity._id)}/></td>
 
                             </tr>

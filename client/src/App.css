@@ -2,20 +2,238 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: 'Playfair Display', serif;
 }
 
 .App {
   text-align: center;
 }
+h1 {
+  font-family: 'Playfair Display', serif;
+}
+body{
+  background-image: linear-gradient(to right, rgb(26, 56, 194), rgb(139, 187, 233), rgb(32, 90, 218));
+}
+/* Details of individual convention with list of celebs */
+
+.celebrity-table {
+  width: 90%;
+  margin: auto;
+}
+
+.add-new-celeb-title {
+  margin-top: 20px;
+  font-size: 22px;
+}
+.solo-convention-title{
+  margin-top: 25px;
+  font-size: 30px;
+}
+
+.all-conventions-header {
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  margin: 30px;
+}
+.all-conventions-header span {
+  border: 1px solid black;
+  background-color: rgb(219, 238, 255);
+  padding: 5px;
+  border-radius: 10px;
+}
+.header-link {
+  text-decoration: none;
+}
+.celeb-checklist-title {
+  font-size: 22px;
+  text-align: left;
+  margin-left: 7%;
+  color: rgb(255, 255, 255);
+  margin-bottom: 10px;
+  width: 210px;
+  text-shadow: 0px 0px 9px rgb(255, 255, 255);
+}
 
 .all-celeb-boxes {
   display: flex;
+  margin: auto;
+  width: 96%;
+  margin-bottom: 45px;
 }
 
-.celeb-info-display {
-  width: 315px;
+.celeb-info-display td {
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 4px 12px;
+  background-color:rgb(203, 249, 252);
+  font-family: Georgia, "Times New Roman";
+  font-size: 18px;
 }
+
+.celeb-table-headings th {
+  border: 2px solid black;
+  background-color: rgb(65, 250, 188);
+  padding: 4px;
+}
+
 .display-image {
-  width: 140px;
-  height: auto;
+  width: 100px;
+  height: 120px;
+  object-fit: cover;
+}
+
+.edit-celeb-button{
+  padding: 15px;
+  font-family: Georgia, "Times New Roman";
+  font-size: 14px;
+}
+
+td.celeb-list-name {
+  font-size: 20px;
+}
+
+/* LIST ALL CONVENTIONS */
+
+.convention-header-row th{
+  border: 1px solid black;
+  background-color: rgb(115, 250, 255);
+}
+
+.convention-row td{
+  padding: 20px;
+  border: 1px solid black;
+  font-family: Georgia, "Times New Roman";
+}
+.cell {
+  background-color: rgb(226, 226, 255);
+}
+.cell-name{
+  background-color: rgb(253, 223, 159);
+}
+.cell-details {
+  font-size: 18px;
+  background-color: rgb(199, 251, 255);
+}
+.cell-delete {
+  background-color: pink;
+}
+.convention-list-background {
+  background-image: linear-gradient(to right, rgb(26, 56, 194), rgb(139, 187, 233), rgb(32, 90, 218));
+}
+.convention-list {
+  margin-left: 20px;
+}
+/* CELEBRITY FORM */
+
+.celebrity-form {
+  border: 2px solid black;
+  border-radius: 10px;
+  text-align: left;
+  width: 25%;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 35px;
+  padding: 14px;
+  background-image: linear-gradient(to bottom right, rgb(10, 192, 192), rgb(91, 241, 111), rgb(36, 67, 206))
+}
+.celebrity-form input {
+  display: flex;
+  margin: auto;
+  margin-bottom: 10px;
+  padding: 1.5px;
+  width: 99%;
+}
+input.add-celebrity-button {
+  width: 115px;
+  padding: 5px;
+  font-size: 16px;
+}
+
+/* CONVENTION FORM PAGE */
+
+.convention-form-container {
+  margin: auto;
+  width: 45%;
+}
+.conventionForm {
+  border: 1px solid black;
+  margin: 30px 20px;
+  padding: 15px;
+  background-image: linear-gradient(to bottom right, rgb(255, 145, 0), rgb(253, 227, 203));
+  border-radius: 10px;
+}
+input.create-convention-button {
+  margin: auto;
+  margin-top: 15px;
+  width: 150px;
+  margin-bottom: 15px;
+  padding: 7px 15px;
+  background-color: rgb(243, 139, 21);
+}
+.convention-form-div {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px;
+}
+.convention-form-div input {
+  width: 40%;
+}
+.convention-form-div p{
+  font-size: 12px;
+}
+span.your-conventions-link  {
+  display: flex;
+  justify-content: center;
+  margin-top: 12px;
+}
+.header-link-convention {
+  text-decoration: none;
+  background-color: rgb(219, 238, 255);
+  padding: 5px;
+  border-radius: 10px;
+}
+
+/* EDIT CELEBRITY PAGE */
+
+.edit-celebrity-button {
+  padding: 6px 12px;
+  background-color: pink;
+  margin: 7px;
+}
+.display-image-2 {
+  width: 300px;
+  height: 400px;
+  object-fit: cover;
+  margin-bottom: 25px;
+}
+.cancel-edit-button {
+  padding: 6px 12px;
+  background-color: cornsilk;
+  margin: 7px;
+}
+.edit-this-celebrity {
+  font-size: 22px;
+  margin: 14px 5px;
+}
+.celebrity-update-form {
+  border: 2px solid black;
+  border-radius: 10px;
+  width: 50%;
+  margin: auto;
+  background-image: linear-gradient(to bottom right, rgb(219, 136, 27), rgb(140, 20, 220))
+}
+.edit-div {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px 22px;
+}
+.edit-div input {
+  width: 50%;
+}
+.edit-div label{
+  margin: 5px 10px;
+  font-size: 19px;
 }
