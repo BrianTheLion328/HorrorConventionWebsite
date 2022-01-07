@@ -7,37 +7,64 @@ import '../App.css';
 
 export default function Details(props) {
     const {id} = props
-    const [convention, setConvention] = useState('');
+    const [convention, setConvention] = useState({});
     const [celebrities, setCelebrities] = useState([])
+    const [errors, setErrors] = useState('')
 
     useEffect(() => {
         axios.get(`http://localhost:8000/api/conventions/${id}`)
             .then(res => {
+                console.log("DETAILS PAGE RES.DATA: ", res.data)
                 setConvention( {...res.data} )
-            })
-            .catch(err => console.log(err.response))
-
-            axios.get(`http://localhost:8000/api/celebrities`)
-            .then((res) => {
-                setCelebrities(res.data)
+                setCelebrities(res.data.celebrities)
             })
             .catch(err => console.log(err.response))
     }, [id])
 
-    // useEffect(() => {
-    //     // axios.get(`http://localhost:8000/api/celebrities`)
-    //     //     .then((res) => {
-    //     //         setCelebrities(res.data)
-    //     //     })
-    //     //     .catch(err => console.log(err.response))
-    // }, [celebrities])
+    const getCelebrityIds = () => {
+        let celebIds = celebrities.map((celebrity, index) => {
+            return celebrity._id
+        })
+        return celebIds
+    }
+
+    const updateConventionCelebrities = (updatedConvention) => {
+        axios.put(`http://localhost:8000/api/conventions/${id}`, updatedConvention)
+        .then(updatedResult => {
+            console.log("UPDATED RESULT: ", updatedResult);
+            setConvention(updatedResult.data)
+        })
+        .catch(err => {
+            console.log("UPDATED RESULT ERROR: ", err)
+            setErrors("Error while pushing celeb into convention!")
+        })
+    }
 
     const addCelebrity = celebrity => {
         console.log("CELEBRITY FORM CHECK: ", celebrity)
         setCelebrities([...celebrities, celebrity]);
+        let updatedConvention = {...convention};
+        updatedConvention.celebrities = getCelebrityIds()
+        updatedConvention.celebrities.push(celebrity._id)
+        // celebrities in this line above refers to the key of "celebrities"
+        // in your convention model that you are pushing a particular
+        // celebrities' id into to add them to that convention.
+        updateConventionCelebrities(updatedConvention)
+        // axios.put(`http://localhost:8000/api/conventions/${id}`, updatedConvention)
+        //     .then(updatedResult => {
+        //         console.log("UPDATED RESULT: ", updatedResult);
+        //         setConvention(updatedResult.data)
+        //     })
+        //     .catch(err => {
+        //         console.log("UPDATED RESULT ERROR: ", err)
+        //         setErrors("Error while pushing celeb into convention!")
+        //     })
     }
 
     const removeFromDom = someId => {
+        let updatedConvention = {...convention}
+        updatedConvention.celebrities = getCelebrityIds().filter(celebrityId => celebrityId !== someId)
+        updateConventionCelebrities(updatedConvention)
         setCelebrities( celebrities.filter(celebrity => celebrity._id !== someId) )
     }
 
@@ -49,6 +76,9 @@ export default function Details(props) {
             </div>
             <h2 className="solo-convention-title">{convention.conventionName}</h2>
             <CelebrityForm addCelebrity={addCelebrity} />
+            {
+                errors ? <p>{errors}</p> : null
+            }
             <h2 className="celeb-checklist-title">Celebrity Checklist:</h2>
             <div className="all-celeb-boxes">
                 <table className="celebrity-table">

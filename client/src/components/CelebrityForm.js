@@ -28,12 +28,13 @@ export default function CelebrityForm(props) {
         axios.post("http://localhost:8000/api/celebrities", newCelebrity)
             .then(res => {
                 console.log("AXIOS POST NEW CELEBRITY: ", res.data)
+                const newCeleb = res.data
                 setCelebName('')
                 setMovie('')
                 setCharacter('')
                 setPhotoUrl('')
                 setPhotoOpTime('')
-                addCelebrity(res.data)
+                addCelebrity(newCeleb)
             })
             .catch((err) => {
                 console.log("ERROR FOR ADDING NEW CELEBRITY: ", err.response.data.errors)
