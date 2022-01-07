@@ -33,7 +33,7 @@ export default function ConventionList() {
                             <th className="table-header">City </th>
                             <th className="table-header">State </th>
                             <th className="table-header">Date </th>
-                            <th colSpan="2" className="table-header">Actions</th>
+                            <th colSpan="3" className="table-header">Actions</th>
                         </tr>
                         {
                             conventions && conventions.map((convention, index) => {
@@ -44,6 +44,7 @@ export default function ConventionList() {
                                         <td className="cell cell-state">{convention.conventionState}</td>
                                         <td className="cell cell-date">{convention.conventionDate.split("T")[0]}</td>
                                         <td className="cell cell-details"><Link to={`/convention/${convention._id}`}>Details</Link> </td>
+                                        <td className="cell cell-edit-convention"><Link to={`/convention/${convention._id}/edit`}>Edit Convention</Link></td>
                                         <td className="cell cell-delete"><Delete someId={convention._id} successCallback={() => removeFromDom(convention._id)}/></td>
                                     </tr>
                                 )
