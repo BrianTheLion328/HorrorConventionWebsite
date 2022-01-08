@@ -12,7 +12,7 @@ h1 {
   font-family: 'Playfair Display', serif;
 }
 body{
-  background-image: linear-gradient(to right, rgb(41, 39, 39), rgb(247, 31, 31), rgb(39, 38, 38));
+  background-image: linear-gradient(to right, rgb(41, 39, 39), rgb(255, 70, 70), rgb(39, 38, 38));
 }
 /* Details of individual convention with list of celebs */
 
@@ -28,6 +28,8 @@ body{
 .solo-convention-title{
   margin-top: -10px;
   font-size: 50px;
+  color: black;
+  text-shadow: 3px 3px 3px rgb(217, 246, 255);
 }
 
 .all-conventions-header {
@@ -122,7 +124,7 @@ td.celeb-list-name {
   background-color: pink;
 }
 .convention-list-background {
-  background-image: linear-gradient(to right, rgb(41, 39, 39), rgb(247, 31, 31), rgb(39, 38, 38));
+  background-image: linear-gradient(to right, rgb(41, 39, 39), rgb(255, 70, 70), rgb(39, 38, 38));
 }
 .convention-list {
   margin-left: 20px;
@@ -240,4 +242,3 @@ span.your-conventions-link  {
   margin: 5px 10px;
   font-size: 19px;
 }
-
