@@ -18,7 +18,11 @@ const CelebritySchema = new mongoose.Schema({
     },
     celebPhotoOp: {
         type: String,
-    }
+    },
+    // conventions: {
+    //     type: mongoose.Schema.Types.ObjectId,
+    //     ref: "Convention"
+    // }
 }, {timestamps: true} )
 
 const Celebrity = mongoose.model("Celebrity", CelebritySchema)

@@ -3,7 +3,7 @@ import axios from 'axios';
 import React, { useState, useEffect } from 'react'
 
 export default function EditCelebrity(props) {
-    const {id} = props;
+    const {id, conventionId} = props;
     const [celebName, setCelebName] = useState('');
     const [movie, setMovie] = useState('');
     const [character, setCharacter] = useState('');
@@ -34,7 +34,8 @@ export default function EditCelebrity(props) {
             celebPhotoOp: photoOpTime,
         })
         .then(res => {
-            navigate(`/convention/${id}`)
+            console.log("Successfully edited this celebrity.")
+            navigate(`/convention/${conventionId}`)
         })
         .catch(err => {
             console.log("UPDATE CELEBRITY CONSOLE LOG: ", err.response.data.errors)

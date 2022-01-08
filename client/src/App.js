@@ -9,14 +9,14 @@ import EditConvention from './components/EditConvention';
 function App() {
   return (
     <div className="App">
-      <h1>Convention Organizer App</h1>
+      <h1>Convention Creator App</h1>
       <Router>
         {/* <Login />
         <Register /> */}
         <ConventionForm path="/convention-creator" />
         <ConventionList path="/all-conventions" />
         <Details path="/convention/:id" />
-        <EditCelebrity path="/celebrities/:id/edit" />
+        <EditCelebrity path="/celebrities/:id/edit/:conventionId" />
         <EditConvention path="/convention/:id/edit" />
       </Router>
     </div>

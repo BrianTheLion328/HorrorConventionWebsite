@@ -8,6 +8,7 @@ export default function EditConvention(props) {
     const [conCity, setConCity] = useState('');
     const [conState, setConState] = useState('');
     const [conDate, setConDate] = useState('');
+    const [conCelebrities, setConCelebrities] = useState([])
     const [errors, setErrors] = useState([])
 
     useEffect(() => {
@@ -19,6 +20,7 @@ export default function EditConvention(props) {
                 setConDate(res.data.conventionDate.split("T")[0])
                 // .split("T")[0] will cut off the time in the date,
                 // leaving only the YYYY-MM-DD that you want to see.
+                setConCelebrities(res.data.celebrities)
             })
             .catch(err => console.log("ERROR FROM EDIT CONV USEFFECT: ", err))
     }, [id])
@@ -31,6 +33,7 @@ export default function EditConvention(props) {
             conventionCity: conCity,
             conventionState: conState,
             conventionDate: conDate,
+            celebrities: conCelebrities,
         })
         .then(res => {
             console.log("Successfully updated this convention.")

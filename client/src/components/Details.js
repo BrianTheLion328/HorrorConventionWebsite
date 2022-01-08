@@ -50,15 +50,6 @@ export default function Details(props) {
         // in your convention model that you are pushing a particular
         // celebrities' id into to add them to that convention.
         updateConventionCelebrities(updatedConvention)
-        // axios.put(`http://localhost:8000/api/conventions/${id}`, updatedConvention)
-        //     .then(updatedResult => {
-        //         console.log("UPDATED RESULT: ", updatedResult);
-        //         setConvention(updatedResult.data)
-        //     })
-        //     .catch(err => {
-        //         console.log("UPDATED RESULT ERROR: ", err)
-        //         setErrors("Error while pushing celeb into convention!")
-        //     })
     }
 
     const removeFromDom = someId => {
@@ -89,7 +80,7 @@ export default function Details(props) {
                             <th>Role</th>
                             <th>Photo Op Schedule</th>
                             <th>Image</th>
-                            <th colSpan="3">Actions</th>
+                            <th colSpan="4">Actions</th>
                         </tr>
                         {
                     celebrities.map((celebrity, index) => {
@@ -100,13 +91,16 @@ export default function Details(props) {
                                 <td>{celebrity.celebCharacter}</td>
                                 <td>{celebrity.celebPhotoOp}</td>
                                 <td colSpan="2"><img className="display-image" src={celebrity.celebPhotoUrl} alt="celeb" /></td>
-                                <td><button className="edit-celeb-button" onClick={() => navigate(`/celebrities/${celebrity._id}/edit`)}>Edit Celebrity</button></td>
+                                <td><button className="edit-celeb-button" onClick={() => navigate(`/celebrities/${celebrity._id}/edit/${id}`)}>Edit Celebrity</button></td>
                                 <td><DeleteCeleb someId={celebrity._id} successCallback={() => removeFromDom(celebrity._id)}/></td>
-
+                                <td><button className="met-button" onClick={() => alert(`CONGRATULATIONS! You met ${celebrity.celebName} from ${celebrity.celebMovie}!`)}> MET! </button></td>
                             </tr>
                         )
                     })
                 }
+                <tr>
+                    <td colSpan="9" style={{color: "white"}}>All images are being used for educational purposes. I do not own anything!</td>
+                </tr>
                     </tbody>
                 </table>
             </div>
