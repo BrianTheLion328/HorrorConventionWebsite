@@ -23,7 +23,7 @@ export default function CelebrityForm(props) {
         }
         console.log("New Celebrity: ", newCelebrity)
 
-        console.log(addCelebrity);
+        console.log("ADD CELEBRITY: ", addCelebrity);
 
         axios.post("http://localhost:8000/api/celebrities", newCelebrity)
             .then(res => {
