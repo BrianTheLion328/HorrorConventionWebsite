@@ -68,7 +68,7 @@ export default function EditCelebrity(props) {
                     onChange={(e) => { setMovie(e.target.value) } } />
                 </div>
                 <div className="edit-div">
-                    <label>Character they play: </label>
+                    <label>Role: </label>
                     <input type="text"
                     name="character-name"
                     value={character}

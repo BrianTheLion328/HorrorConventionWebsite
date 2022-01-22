@@ -12,7 +12,7 @@ h1 {
   font-family: 'Playfair Display', serif;
 }
 body{
-  background-image: linear-gradient(to right, rgb(41, 39, 39), rgb(255, 70, 70), rgb(39, 38, 38));
+  background-image: linear-gradient(to right, rgb(41, 39, 39), rgb(255, 255, 255), rgb(39, 38, 38));
 }
 /* Details of individual convention with list of celebs */
 
