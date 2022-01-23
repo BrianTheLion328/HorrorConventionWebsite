@@ -273,7 +273,7 @@ span.your-conventions-link  {
   display: flex;
   width: 50%;
   justify-content: space-between;
-  margin: 10px auto;
+  margin: 12px auto;
 }
 /* REGISTER FORM */
 .register-container {
@@ -289,5 +289,5 @@ span.your-conventions-link  {
   display: flex;
   width: 50%;
   justify-content: space-between;
-  margin: 10px auto;
+  margin: 12px auto;
 }
