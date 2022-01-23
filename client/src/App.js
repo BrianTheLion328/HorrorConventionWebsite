@@ -7,6 +7,7 @@ import EditCelebrity from './components/EditCelebrity';
 import EditConvention from './components/EditConvention';
 import LogReg from "./views/LogRes";
 import Header from "./views/Header";
+import Footer from "./components/Footer"
 
 function App() {
   return (
@@ -22,6 +23,8 @@ function App() {
         <EditCelebrity path="/celebrities/:id/edit/:conventionId" />
         <EditConvention path="/convention/:id/edit" />
       </Router>
+      <br />
+      <Footer />
     </div>
   );
 }
