@@ -21,7 +21,7 @@ export default function ConventionForm(props) {
         }
         console.log("New Convention: ", newConvention)
 
-        axios.post("http://localhost:8000/api/conventions", newConvention)
+        axios.post("http://localhost:8000/api/conventions", newConvention, {withCredentials: true})
             .then(res => {
                 console.log(res.data)
                 navigate('/all-conventions')

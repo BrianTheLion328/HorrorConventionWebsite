@@ -12,7 +12,7 @@ export default function EditConvention(props) {
     const [errors, setErrors] = useState([])
 
     useEffect(() => {
-        axios.get(`http://localhost:8000/api/conventions/${id}`)
+        axios.get(`http://localhost:8000/api/conventions/${id}`, {withCredentials: true})
             .then(res => {
                 setConName(res.data.conventionName)
                 setConCity(res.data.conventionCity)

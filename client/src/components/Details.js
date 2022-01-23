@@ -12,7 +12,7 @@ export default function Details(props) {
     const [errors, setErrors] = useState('')
 
     useEffect(() => {
-        axios.get(`http://localhost:8000/api/conventions/${id}`)
+        axios.get(`http://localhost:8000/api/conventions/${id}`, {withCredentials: true})
             .then(res => {
                 console.log("DETAILS PAGE RES.DATA: ", res.data)
                 setConvention( {...res.data} )

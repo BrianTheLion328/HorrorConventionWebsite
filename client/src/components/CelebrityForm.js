@@ -25,7 +25,7 @@ export default function CelebrityForm(props) {
 
         console.log("ADD CELEBRITY: ", addCelebrity);
 
-        axios.post("http://localhost:8000/api/celebrities", newCelebrity)
+        axios.post("http://localhost:8000/api/celebrities", newCelebrity, {withCredentials: true})
             .then(res => {
                 console.log("AXIOS POST NEW CELEBRITY: ", res.data)
                 const newCeleb = res.data

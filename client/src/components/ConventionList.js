@@ -8,7 +8,7 @@ export default function ConventionList() {
     const [conventions, setConventions] = useState([])
 
     useEffect(() => {
-        axios.get("http://localhost:8000/api/conventions")
+        axios.get("http://localhost:8000/api/conventions", {withCredentials: true})
             .then((res) => {
                 setConventions(res.data)
             })

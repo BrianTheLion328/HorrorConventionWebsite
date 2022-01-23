@@ -12,7 +12,8 @@ h1 {
   font-family: 'Playfair Display', serif;
 }
 body{
-  background-image: linear-gradient(to right, rgb(41, 39, 39), rgb(255, 255, 255), rgb(39, 38, 38));
+  /* background-image: linear-gradient(to right, rgb(41, 39, 39), rgb(255, 255, 255), rgb(39, 38, 38)); */
+
 }
 /* Details of individual convention with list of celebs */
 
@@ -241,4 +242,52 @@ span.your-conventions-link  {
 .edit-div label{
   margin: 5px 10px;
   font-size: 19px;
+}
+
+/* HEADER STYLING */
+.main-header {
+  width: 60%;
+  padding: 10px;
+  margin: 10px;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+}
+.main-header button {
+  background-color: skyblue;
+  padding: 6px 10px;
+  border-radius: 10px;
+}
+
+/* LOGIN FORM */
+.login-container {
+  width: 50%;
+  margin: 20px auto;
+  border: 1px solid black;
+}
+.login-form{
+  display: flex;
+  flex-direction: column;
+}
+.login-form-div {
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+  margin: 10px auto;
+}
+/* REGISTER FORM */
+.register-container {
+  width: 50%;
+  margin: 20px auto;
+}
+.register-form {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.register-form-div {
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+  margin: 10px auto;
 }

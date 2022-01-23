@@ -12,7 +12,7 @@ export default function EditCelebrity(props) {
     const [errors, setErrors] = useState([])
 
     useEffect(() => {
-        axios.get(`http://localhost:8000/api/celebrities/${id}`)
+        axios.get(`http://localhost:8000/api/celebrities/${id}`, {withCredentials: true})
             .then(res => {
                 setCelebName(res.data.celebName)
                 setMovie(res.data.celebMovie)
