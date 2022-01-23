@@ -100,6 +100,9 @@ td.celeb-list-name {
 }
 
 /* LIST ALL CONVENTIONS */
+.conventions-table {
+  margin-left: 28px;
+}
 
 .convention-header-row th{
   border: 1px solid black;
@@ -126,7 +129,7 @@ td.celeb-list-name {
   background-color: pink;
 }
 .convention-list-background {
-  background-image: linear-gradient(to right, rgb(41, 39, 39), rgb(255, 70, 70), rgb(27, 27, 27));
+  background-image: linear-gradient(to right, rgb(41, 39, 39), rgb(255, 255, 255), rgb(39, 38, 38));
 }
 .convention-list {
   margin-left: 20px;
@@ -277,12 +280,13 @@ span.your-conventions-link  {
 }
 .login-form-div {
   display: flex;
-  width: 70%;
+  flex-direction: column;
+  width: 60%;
   justify-content: space-between;
   margin: 10px auto;
 }
 .login-form-div input {
-  padding-left: 40px;
+  padding: 5px;
 }
 .login-submit-button {
   background-color: cornsilk;
@@ -308,12 +312,13 @@ span.your-conventions-link  {
 }
 .register-form-div {
   display: flex;
-  width: 70%;
+  flex-direction: column;
+  width: 60%;
   justify-content: space-between;
   margin: 10px auto;
 }
 .register-form-div input{
-  padding-left: 40px;
+  padding: 5px;
 }
 .register-submit-button {
   background-color: cornsilk;
@@ -327,7 +332,7 @@ span.your-conventions-link  {
   text-align: center;
   bottom: 0;
   width: 100%;
-  margin: 18px auto;
-  position: absolute;
+  margin: 8px auto;
+  position: fixed;
   z-index: -1
 }

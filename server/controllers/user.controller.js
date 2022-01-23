@@ -100,6 +100,7 @@ module.exports = {
             .then(user => res.json(user) )
             .catch(err => res.json(err) );
     },
+    
     addConventionToUser(req, res) {
         User.findOne( { _id: req.params.id } ) // find one user
             .populate("conventions") // for each convention id, populate ALL the info about each one, (name, date, city, state, etc.)

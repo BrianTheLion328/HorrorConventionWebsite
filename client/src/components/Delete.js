@@ -8,7 +8,7 @@ const Delete = (props) => {
     const { someId, successCallback } = props;
 
     const deleteThis = e => {
-        axios.delete('http://localhost:8000/api/conventions/' + someId)
+        axios.delete('http://localhost:8000/api/conventions/' + someId, {withCredentials: true})
             .then(res => {
                 successCallback()
                 navigate('/all-conventions')

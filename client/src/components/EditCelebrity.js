@@ -32,7 +32,9 @@ export default function EditCelebrity(props) {
             celebCharacter: character,
             celebPhotoUrl: photoUrl,
             celebPhotoOp: photoOpTime,
-        })
+        },
+        {withCredentials: true}
+        )
         .then(res => {
             console.log("Successfully edited this celebrity.")
             navigate(`/convention/${conventionId}`)

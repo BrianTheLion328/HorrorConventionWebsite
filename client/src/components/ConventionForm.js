@@ -4,6 +4,7 @@ import { navigate, Link } from '@reach/router';
 import '../App.css';
 
 export default function ConventionForm(props) {
+    // const {addConventionToUser} = props;
     const [conName, setConName] = useState('');
     const [conCity, setConCity] = useState('');
     const [conState, setConState] = useState('');
@@ -24,6 +25,7 @@ export default function ConventionForm(props) {
         axios.post("http://localhost:8000/api/conventions", newConvention, {withCredentials: true})
             .then(res => {
                 console.log(res.data)
+                // addConventionIdToUser(newConvention._id) // WORK ON THIS!!!
                 navigate('/all-conventions')
             })
             .catch((err) => {

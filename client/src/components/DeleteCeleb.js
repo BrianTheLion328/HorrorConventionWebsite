@@ -6,7 +6,7 @@ const DeleteCeleb = (props) => {
     const { someId, successCallback } = props;
 
     const deleteThis = e => {
-        axios.delete('http://localhost:8000/api/celebrities/' + someId)
+        axios.delete('http://localhost:8000/api/celebrities/' + someId, {withCredentials: true})
             .then(res => {
                 successCallback()
             })

@@ -23,7 +23,7 @@ export default function ConventionList() {
         <div className="convention-list">
             <div className="all-conventions-header">
                 <span>Your Current Conventions:</span>
-                <span><Link className="header-link" to={'/convention-creator'}>Add a new convention</Link></span>
+                {/* <span><Link className="header-link" to={'/convention-creator'}>Add a new convention</Link></span> */}
             </div>
             <div>
                 <table className="conventions-table">

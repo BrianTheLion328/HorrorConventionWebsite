@@ -12,9 +12,8 @@ import Footer from "./components/Footer"
 function App() {
   return (
     <div className="App">
-      {/* <h1>Convention Creator App</h1> */}
+      {/* <h1>Convention Creator</h1> */}
       <Header />
-      <hr style={{width: "80%", margin: "auto"}}/>
       <Router>
         <LogReg path="/" />
         <ConventionForm path="/convention-creator" />

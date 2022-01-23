@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
-import {Link, navigate} from '@reach/router';
+import { navigate } from '@reach/router';
 import CelebrityForm from './CelebrityForm';
 import DeleteCeleb from './DeleteCeleb';
 import '../App.css';
@@ -29,7 +29,7 @@ export default function Details(props) {
     }
 
     const updateConventionCelebrities = (updatedConvention) => {
-        axios.put(`http://localhost:8000/api/conventions/${id}`, updatedConvention)
+        axios.put(`http://localhost:8000/api/conventions/${id}`, updatedConvention, {withCredentials: true})
         .then(updatedResult => {
             console.log("UPDATED RESULT: ", updatedResult);
             setConvention(updatedResult.data)
@@ -39,6 +39,7 @@ export default function Details(props) {
             setErrors("Error while pushing celeb into convention!")
         })
     }
+
 
     const addCelebrity = celebrity => {
         console.log("CELEBRITY FORM CHECK: ", celebrity)
@@ -61,10 +62,10 @@ export default function Details(props) {
 
     return (
         <div className="convention-list-background">
-            <div className="all-conventions-header">
+            {/* <div className="all-conventions-header">
                 <span><Link className="header-link" to={'/all-conventions'}>Back to your conventions</Link></span>
                 <span><Link className="header-link" to={'/convention-creator'}>Add a new convention</Link></span>
-            </div>
+            </div> */}
             <h2 className="solo-convention-title">{convention.conventionName}</h2>
             <CelebrityForm addCelebrity={addCelebrity} />
             {
@@ -99,7 +100,7 @@ export default function Details(props) {
                     })
                 }
                 <tr>
-                    <td colSpan="9" style={{color: "white"}}>All images are being used for educational purposes. I do not own anything!</td>
+                    <td colSpan="9" style={{color: "black"}}>All images are being used for educational purposes. I do not own anything!</td>
                 </tr>
                     </tbody>
                 </table>

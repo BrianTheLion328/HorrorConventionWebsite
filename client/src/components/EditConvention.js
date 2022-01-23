@@ -34,7 +34,9 @@ export default function EditConvention(props) {
             conventionState: conState,
             conventionDate: conDate,
             celebrities: conCelebrities,
-        })
+        },
+        {withCredentials: true}
+        )
         .then(res => {
             console.log("Successfully updated this convention.")
             navigate(`/all-conventions`)
