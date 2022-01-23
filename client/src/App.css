@@ -264,6 +264,8 @@ span.your-conventions-link  {
   width: 50%;
   margin: 20px auto;
   border: 1px solid black;
+  border-radius: 15px;
+  box-shadow: 3px 3px 3px lightgray;
 }
 .login-form{
   display: flex;
@@ -271,9 +273,21 @@ span.your-conventions-link  {
 }
 .login-form-div {
   display: flex;
-  width: 50%;
+  width: 70%;
   justify-content: space-between;
-  margin: 12px auto;
+  margin: 10px auto;
+}
+.login-form-div input {
+  padding: 1px 10px;
+}
+.login-submit-button {
+  background-color: cornsilk;
+  padding: 5px 12px;
+  border-radius: 10px;
+  margin: 10px;
+}
+.login-title {
+  margin-top: 10px;
 }
 /* REGISTER FORM */
 .register-container {
@@ -289,5 +303,5 @@ span.your-conventions-link  {
   display: flex;
   width: 50%;
   justify-content: space-between;
-  margin: 12px auto;
+  margin: 10px auto;
 }

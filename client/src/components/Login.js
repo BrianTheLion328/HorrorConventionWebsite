@@ -31,7 +31,7 @@ export default function Login() {
 
     return (
         <div className="login-container">
-            <h2>Login</h2>
+            <h2 className="login-title">Login</h2>
             <p className="error-text">{errorMessage ? errorMessage: ""}</p>
             <form className="login-form" onSubmit={login}>
                 <div className="login-form-div">
@@ -53,7 +53,7 @@ export default function Login() {
                     />
                 </div>
                 <div>
-                    <button type="submit">Sign In</button>
+                    <button className="login-submit-button" type="submit">Sign In</button>
                 </div>
             </form>
         </div>
