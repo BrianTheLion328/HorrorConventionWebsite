@@ -170,7 +170,7 @@ input.add-celebrity-button {
   border: 1px solid black;
   margin: 30px 20px;
   padding: 15px;
-  background-image: linear-gradient(to bottom right, rgb(240, 70, 70), rgb(253, 227, 203), rgb(240, 70, 70));
+  background-image: linear-gradient(to bottom right, rgb(240, 166, 70), rgb(253, 227, 203), rgb(240, 166, 70));
   border-radius: 30px;
 }
 input.create-convention-button {

@@ -13,4 +13,5 @@ module.exports = (app) => {
     // if it is successful the "next" method that is called
     // comes from userController
     app.get("/api/user/loggedin", authenticate, userController.getLoggedInUser);
+    app.put("/api/user/loggedin", authenticate, userController.addConventionToUser);
 };

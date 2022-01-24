@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { navigate, Link } from '@reach/router';
+import { navigate } from '@reach/router';
 import '../App.css';
 
 export default function ConventionForm(props) {
-    // const {addConventionToUser} = props;
+    // const {addConventionIdToUser} = props;
     const [conName, setConName] = useState('');
     const [conCity, setConCity] = useState('');
     const [conState, setConState] = useState('');
     const [conDate, setConDate] = useState('');
     const [errors, setErrors] = useState([])
+    // const [user, setUser] = useState("");
 
     const createConvention = (e) => {
         e.preventDefault()
@@ -25,7 +26,7 @@ export default function ConventionForm(props) {
         axios.post("http://localhost:8000/api/conventions", newConvention, {withCredentials: true})
             .then(res => {
                 console.log(res.data)
-                // addConventionIdToUser(newConvention._id) // WORK ON THIS!!!
+                // addConventionIdToUser(newConvention)
                 navigate('/all-conventions')
             })
             .catch((err) => {
@@ -35,14 +36,17 @@ export default function ConventionForm(props) {
                 }
             })
 
+        // axios.get("http://localhost:8000/api/user/loggedin", {withCredentials: true})
+        //     .then(loggedInUser => {
+        //         console.log("Logged in user", loggedInUser)
+        //         setUser(loggedInUser.data)
+        //         let userConventions = loggedInUser.conventions
+        //     })
 
     }
 
     return (
         <div className="convention-form-container">
-            <div>
-                <span className="your-conventions-link"><Link className="header-link-convention" to={'/all-conventions'}>Click here to go directly to your conventions</Link></span>
-            </div>
             <form className="conventionForm" onSubmit={createConvention}>
             <h2>Create a new convention:</h2>
                 <div className="convention-form-div">

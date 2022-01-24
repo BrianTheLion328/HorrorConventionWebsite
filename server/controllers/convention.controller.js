@@ -1,5 +1,6 @@
 const Convention = require('../models/convention.model')
 const Celebrity = require('../models/celebrity.model')
+const UserController = require('./user.controller')
 
 const getAllConventions = (req, res) => {
     Convention.find({})
@@ -22,7 +23,10 @@ const getOneConvention = (req, res) => {
 
 const addNewConvention = (req, res) => {
     Convention.create(req.body)
-        .then((newConvention) => res.json(newConvention) )
+        .then((newConvention) => {
+            UserController.addConventionToUser(req, newConvention._id)
+            res.json(newConvention)
+        })
         .catch(err => {
             console.log(err)
             res.status(400).json(err)
@@ -48,7 +52,8 @@ const deleteConvention = (req, res) => {
         .then((oneConvention) => {
             // now take that one single convention we targeted and wipe out all the celebrities in that convention.
             Celebrity.deleteMany( {_id: oneConvention.celebrities} )
-            .then(result => {
+            .then(result => {  // remove the convention id from the user's conventions array
+                UserController.removeConventionFromUser(req, oneConvention._id)
                 // finally, NOW you can delete the convention itself after successfully deleting all the celebrities in it first.
                 Convention.deleteOne( {_id: req.params.id} )
                 .then(result => {

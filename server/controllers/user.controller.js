@@ -97,20 +97,58 @@ module.exports = {
         // the decoded values are held in a "payload object"
         // we saved the _id as a part of the login so we can use it for many things!
         User.findById(decodedJWT.payload._id)
+            .populate("conventions")
             .then(user => res.json(user) )
             .catch(err => res.json(err) );
     },
-    
-    addConventionToUser(req, res) {
-        User.findOne( { _id: req.params.id } ) // find one user
+
+    addConventionToUser(req, newConventionId) {
+        const decodedJWT = jwt.decode(req.cookies.usertoken, {complete: true} );
+
+        // the decoded values are held in a "payload object"
+        // we saved the _id as a part of the login so we can use it for many things!
+        User.findByIdAndUpdate(decodedJWT.payload._id,
+            {
+                $addToSet: {conventions: newConventionId} // adds without changing entire document
+            },
+            {
+                new: true,
+                useFindAndModify: false
+            })
+        // User.findOne( { _id: req.params.id } ) // find one user
             .populate("conventions") // for each convention id, populate ALL the info about each one, (name, date, city, state, etc.)
             .then((thisUser) => { // take that user and return them
-                res.json(thisUser)
+                // res.json(thisUser)
                 console.log(thisUser)
             })
             .catch(err => {
                 console.log(err)
-                res.status(400).json(err)
+                // res.status(400).json(err)
+            })
+    },
+
+    removeConventionFromUser(req, conventionId) {
+        const decodedJWT = jwt.decode(req.cookies.usertoken, {complete: true} );
+
+        // the decoded values are held in a "payload object"
+        // we saved the _id as a part of the login so we can use it for many things!
+        User.findByIdAndUpdate(decodedJWT.payload._id,
+            {
+                $pull: {conventions: conventionId} // removes without changing entire document
+            },
+            {
+                new: true,
+                useFindAndModify: false
+            })
+        // User.findOne( { _id: req.params.id } ) // find one user
+            .populate("conventions") // for each convention id, populate ALL the info about each one, (name, date, city, state, etc.)
+            .then((thisUser) => { // take that user and return them
+                // res.json(thisUser)
+                console.log(thisUser)
+            })
+            .catch(err => {
+                console.log(err)
+                // res.status(400).json(err)
             })
     }
 };

@@ -27,6 +27,7 @@ export default function Header() {
         <div>
             <h1>Welcome to Convention Creator!</h1>
             <div className="main-header">
+                <button onClick={() => navigate("/")}>Login</button>
                 <button onClick={() => navigate("/convention-creator")}>Create New Convention</button>
                 <button onClick={() => navigate("/all-conventions")}>All Conventions</button>
                 <button onClick={(e) => logout(e)} >Logout</button>
