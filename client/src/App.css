@@ -331,6 +331,8 @@ span.your-conventions-link  {
 .home-page-image {
   width: 90%;
   object-fit: cover;
+  border-radius: 20px;
+  padding: 5px;
 }
 .home-message {
   margin-bottom: 25px;
@@ -348,6 +350,7 @@ span.your-conventions-link  {
 }
 .home-table td{
   border: 1px solid black;
+  border-radius: 25px;
 }
 .p-cell {
   background-color: rgb(255, 194, 124);
