@@ -21,7 +21,7 @@ export default function Login() {
         )
         .then((res) => {
             console.log("LOGIN RES.DATA: ", res.data);
-            navigate("/all-conventions")
+            navigate("/home")
         })
         .catch(err => {
             console.log(err)
@@ -55,6 +55,7 @@ export default function Login() {
                 <div>
                     <button className="login-submit-button" type="submit">Sign In</button>
                 </div>
+                <p style={{color: "crimson"}}>{errorMessage ? "Invalid login attempt" : null}</p>
             </form>
         </div>
     )

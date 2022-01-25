@@ -8,14 +8,15 @@ import EditConvention from './components/EditConvention';
 import LogReg from "./views/LogRes";
 import Header from "./views/Header";
 import Footer from "./components/Footer"
+import Home from "./components/Home"
 
 function App() {
   return (
     <div className="App">
-      {/* <h1>Convention Creator</h1> */}
       <Header />
       <Router>
         <LogReg path="/" />
+        <Home path="/home" />
         <ConventionForm path="/convention-creator" />
         <ConventionList path="/all-conventions" />
         <Details path="/convention/:id" />

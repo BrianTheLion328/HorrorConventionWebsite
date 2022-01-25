@@ -58,7 +58,7 @@ const deleteConvention = (req, res) => {
                 Convention.deleteOne( {_id: req.params.id} )
                 .then(result => {
                     res.json(result)
-                    console.log("SUCCESS!")
+                    console.log("SUCCESS! You have deleted this convention and its celebrities")
                     // if you dont dump out the celebrities array before deleting, then they are lost in limbo
                     // and can/will screw up your code and other conventions. Delete everything inside a convention
                     // before deleting the convention. Think of it like you empty out a house before you demolish it.

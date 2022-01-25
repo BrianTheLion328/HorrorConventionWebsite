@@ -4,7 +4,6 @@
   padding: 0;
   font-family: 'Playfair Display', serif;
 }
-
 .App {
   text-align: center;
 }
@@ -17,12 +16,10 @@ body{
 }
 
 /* Details of individual convention with list of celebs */
-
 .celebrity-table {
   width: 90%;
   margin: auto;
 }
-
 .add-new-celeb-title {
   margin-top: 20px;
   font-size: 22px;
@@ -33,7 +30,6 @@ body{
   color: black;
   text-shadow: 3px 3px 3px rgb(217, 246, 255);
 }
-
 .all-conventions-header {
   font-size: 20px;
   display: flex;
@@ -58,14 +54,12 @@ body{
   width: 210px;
   text-shadow: 0px 0px 9px rgb(1, 255, 35);
 }
-
 .all-celeb-boxes {
   display: flex;
   margin: auto;
   width: 96%;
   margin-bottom: 45px;
 }
-
 .celeb-info-display td {
   border: 2px solid black;
   border-radius: 5px;
@@ -74,7 +68,6 @@ body{
   font-family: Georgia, "Times New Roman";
   font-size: 18px;
 }
-
 .celeb-table-headings th {
   border: 2px solid black;
   background-color: rgb(0, 0, 0);
@@ -82,34 +75,28 @@ body{
   font-size: 18px;
   padding: 5px;
 }
-
 .display-image {
   width: 100px;
   height: 120px;
   object-fit: cover;
 }
-
 .edit-celeb-button{
   padding: 15px;
   font-family: Georgia, "Times New Roman";
   font-size: 14px;
 }
-
 td.celeb-list-name {
   font-size: 20px;
 }
-
 /* LIST ALL CONVENTIONS */
 .conventions-table {
-  margin-left: 28px;
+  margin: auto;
 }
-
 .convention-header-row th{
   border: 1px solid black;
   background-color: rgb(32, 30, 30);
   color: white;
 }
-
 .convention-row td{
   padding: 20px;
   border: 1px solid black;
@@ -128,14 +115,11 @@ td.celeb-list-name {
 .cell-delete {
   background-color: pink;
 }
-.convention-list-background {
-  background-image: linear-gradient(to right, rgb(41, 39, 39), rgb(255, 255, 255), rgb(39, 38, 38));
-}
 .convention-list {
   margin-left: 20px;
 }
-/* CELEBRITY FORM */
 
+/* CELEBRITY FORM */
 .celebrity-form {
   border: 3px solid black;
   border-radius: 10px;
@@ -161,7 +145,6 @@ input.add-celebrity-button {
 }
 
 /* CONVENTION FORM PAGE */
-
 .convention-form-container {
   margin: auto;
   width: 45%;
@@ -205,7 +188,6 @@ span.your-conventions-link  {
 }
 
 /* EDIT CELEBRITY PAGE */
-
 .edit-celebrity-button {
   padding: 6px 12px;
   background-color: pink;
@@ -268,7 +250,6 @@ span.your-conventions-link  {
 .login-container {
   width: 50%;
   margin: 20px auto;
-  /* border: 1px solid black; */
   border-radius: 15px;
   box-shadow: 0px 0px 15px lightgray;
   background-color: white;
@@ -297,6 +278,7 @@ span.your-conventions-link  {
 .login-title {
   margin-top: 10px;
 }
+
 /* REGISTER FORM */
 .register-container {
   width: 50%;
@@ -335,4 +317,123 @@ span.your-conventions-link  {
   margin: 8px auto;
   position: fixed;
   z-index: -1
+}
+.footer-div h4{
+  margin-bottom: 2px;
+}
+
+/* HOME PAGE */
+.home-table {
+  width: 95%;
+  margin: auto;
+  margin-bottom: 40px;
+}
+.home-page-image {
+  width: 90%;
+  object-fit: cover;
+}
+.home-message {
+  margin-bottom: 25px;
+}
+.home-message p {
+  background-color: cornsilk;
+  width: 85%;
+  margin: auto;
+  padding: 16px 20px;
+  box-shadow: 0px 0px 16px rgb(255, 166, 0);
+  border-radius: 50px;
+}
+.home-table-image-cell {
+  background-color: black;
+}
+.home-table td{
+  border: 1px solid black;
+}
+.p-cell {
+  background-color: rgb(255, 194, 124);
+  padding: 7px;
+  line-height: 24px;
+}
+.h-cell {
+  padding: 8px;
+  font-size: 28px;
+  width: 33%;
+  text-shadow: 0px 0px 4px beige;
+}
+
+/* Responsive Design for tablet 750 pixels width */
+
+@media only screen and (max-width: 750px) {
+  body {
+    margin: 0;
+    padding: 0;
+    max-width: 90%;
+    font-size: 9px;
+  }
+  .App {
+    margin: auto;
+  }
+  .convention-list {
+    width: 90%;
+    margin: auto;
+  }
+  .main-header button{
+    padding: 3px;
+    max-width: 20%;
+    font-size: 8px;
+    margin: auto;
+  }
+  .main-header {
+    width: 90%;
+    margin: auto;
+  }
+  input.add-celebrity-button {
+    max-width: 70%;
+    margin: auto;
+    font-size: 7px;
+  }
+  .celebrity-table td {
+    width: 50%;
+    font-size: 9px;
+    padding: 0;
+    margin: 0
+  }
+  .celebrity-table th {
+    width: 50%;
+    font-size: 9px;
+    padding: 0;
+    margin: 0
+  }
+  .met-button,
+  .create-convention-button,
+  .delete-btn,
+  .edit-celeb-button {
+    max-width: 90%;
+    font-size: 7px;
+  }
+  img.display-image,
+  img.display-image2 {
+    width: 90%;
+    margin: auto;
+    object-fit: contain;
+  }
+  .celebrity-update-form {
+    width: 90%;
+    margin: auto;
+  }
+  div.home-container {
+    width: 95%;
+    margin: auto;
+  }
+  #city-list-menu {
+    width: 70%;
+    font-size: 8px;
+  }
+  .conventions-table {
+    width: 90%;
+    margin: auto;
+  }
+  .cell-details a {
+    font-size: 12px;
+  }
 }

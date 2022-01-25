@@ -62,10 +62,6 @@ export default function Details(props) {
 
     return (
         <div className="convention-list-background">
-            {/* <div className="all-conventions-header">
-                <span><Link className="header-link" to={'/all-conventions'}>Back to your conventions</Link></span>
-                <span><Link className="header-link" to={'/convention-creator'}>Add a new convention</Link></span>
-            </div> */}
             <h2 className="solo-convention-title">{convention.conventionName}</h2>
             <CelebrityForm addCelebrity={addCelebrity} />
             {
@@ -99,9 +95,9 @@ export default function Details(props) {
                         )
                     })
                 }
-                <tr>
+                {/* <tr>
                     <td colSpan="9" style={{color: "black"}}>All images are being used for educational purposes. I do not own anything!</td>
-                </tr>
+                </tr> */}
                     </tbody>
                 </table>
             </div>

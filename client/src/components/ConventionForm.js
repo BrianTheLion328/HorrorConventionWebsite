@@ -4,13 +4,11 @@ import { navigate } from '@reach/router';
 import '../App.css';
 
 export default function ConventionForm(props) {
-    // const {addConventionIdToUser} = props;
     const [conName, setConName] = useState('');
     const [conCity, setConCity] = useState('');
     const [conState, setConState] = useState('');
     const [conDate, setConDate] = useState('');
     const [errors, setErrors] = useState([])
-    // const [user, setUser] = useState("");
 
     const createConvention = (e) => {
         e.preventDefault()
@@ -26,7 +24,6 @@ export default function ConventionForm(props) {
         axios.post("http://localhost:8000/api/conventions", newConvention, {withCredentials: true})
             .then(res => {
                 console.log(res.data)
-                // addConventionIdToUser(newConvention)
                 navigate('/all-conventions')
             })
             .catch((err) => {
@@ -35,14 +32,6 @@ export default function ConventionForm(props) {
                     setErrors(err.response.data.errors)
                 }
             })
-
-        // axios.get("http://localhost:8000/api/user/loggedin", {withCredentials: true})
-        //     .then(loggedInUser => {
-        //         console.log("Logged in user", loggedInUser)
-        //         setUser(loggedInUser.data)
-        //         let userConventions = loggedInUser.conventions
-        //     })
-
     }
 
     return (
