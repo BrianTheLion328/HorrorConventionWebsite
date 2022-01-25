@@ -30,7 +30,7 @@ export default function Home() {
                     <tr>
                         <td className="p-cell"><p>Click on "Create New Convention" and enter the specific details for the convention you want to create. <br />
                         <br />
-                        Example: Texas Frightmare, Dallas, Texas, April 29 - May 1.</p>
+                        Example: <a href="https://www.texasfrightmareweekend.com/">Texas Frightmare</a>, Dallas, Texas, April 29 - May 1.</p>
                         </td>
                         <td className="p-cell"><p>Click the "Details" link in your new convention to take you to the
                         celebrity form and add as many celebrities as you'd like!<br />
