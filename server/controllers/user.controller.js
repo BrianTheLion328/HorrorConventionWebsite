@@ -95,7 +95,7 @@ module.exports = {
         const decodedJWT = jwt.decode(req.cookies.usertoken, {complete: true} );
 
         // the decoded values are held in a "payload object"
-        // we saved the _id as a part of the login so we can use it for many things!
+        // we saved the _id as a part of the login 
         User.findById(decodedJWT.payload._id)
             .populate("conventions")
             .then(user => res.json(user) )

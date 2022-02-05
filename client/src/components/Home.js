@@ -52,7 +52,7 @@ export default function Home() {
                         <img className="home-page-image" src="https://aiptcomics.com/wp-content/uploads/2019/10/art1.jpg" alt="art the clown"/>
                         </td>
                         <td className="home-table-image-cell">
-                        <img className="home-page-image" src="https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-6/241795394_10166063253215284_6660345792451192931_n.jpg?_nc_cat=107&ccb=1-5&_nc_sid=730e14&_nc_ohc=_rujFHr-encAX8IKsio&_nc_ht=scontent-sjc3-1.xx&oh=00_AT9RDil3qVnQ5kl1o_NaFvyC7G_oumUoni5mNE7UWJGvSA&oe=61FBC9E6" alt="me and art" />
+                        <img className="home-page-image" alt="david howard thornton" src="https://assets.change.org/photos/5/re/wy/UxreWYnfCgAtxdI-800x450-noPad.jpg?1576015030" />
                         </td>
                     </tr>
                 </tbody>
