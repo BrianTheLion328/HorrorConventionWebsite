@@ -15,7 +15,7 @@ export default function Login() {
         },
         {   // this will force the sending of cookies so they can be updated
             // XMLHttpRequest from a different domain cannot set cookie values for their own domain
-            // unless withCredentials is set to true before making the request
+            // unless withCredentials is set to true before making the request.
             withCredentials: true
         }
         )

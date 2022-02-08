@@ -69,7 +69,7 @@ export default function CelebrityForm(props) {
                     onChange={(e) => { setMovie(e.target.value) } } />
                 </div>
                 <div>
-                    <label>Role they play: </label>
+                    <label>Role: </label>
                     <input type="text"
                     name="character-name"
                     value={character}
