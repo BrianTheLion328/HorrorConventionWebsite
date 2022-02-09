@@ -95,9 +95,6 @@ export default function Details(props) {
                         )
                     })
                 }
-                {/* <tr>
-                    <td colSpan="9" style={{color: "black"}}>All images are being used for educational purposes. I do not own anything!</td>
-                </tr> */}
                     </tbody>
                 </table>
             </div>
